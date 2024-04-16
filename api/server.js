@@ -30,12 +30,6 @@ server.use(
 );
 server.use(router);
 
-server.post("/upload", upload.single("image"), function (req, res, next) {
-  // req.file is the `image` file
-  // req.body will hold the text fields, if there were any
-  res.json(req.file);
-});
-
 server.listen(3000, () => {
   console.log("JSON Server is running");
 });
