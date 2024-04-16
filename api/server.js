@@ -1,5 +1,6 @@
 // See https://github.com/typicode/json-server#module
 const jsonServer = require("json-server");
+const cors = require("cors");
 
 const server = jsonServer.create();
 
@@ -13,7 +14,7 @@ const router = jsonServer.router(db);
 
 // Comment out to allow write operations
 // const router = jsonServer.router("db.json");
-
+server.use(cors());
 const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
